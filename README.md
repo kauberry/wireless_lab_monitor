@@ -13,10 +13,7 @@ The sensors will communicate through a [MySensors](https://www.mysensors.org)-ba
 The prototype uses a standard surface mount [Microchip/Atmel ATmega328p](https://www.microchip.com/wwwproducts/en/ATMEGA328) in a TQFP32 package, coupled with a [Nordic Semiconductor nRF24L01 Tranceiver](https://www.nordicsemi.com/eng/Products/2.4GHz-RF/nRF24L01P) to communicate with the aforementional backend server. Sensor hardware includes temperature sensors ([Dallas/Maxim DS18b20 Digital Thermometer](https://www.maximintegrated.com/en/products/analog/sensors-and-sensor-interface/DS18B20.html)) along with Hall-effect-based position sensors ([Allegro A1104](https://www.allegromicro.com/en/Products/Magnetic-Digital-Position-Sensor-ICs/Hall-Effect-Unipolar-Switches/A1101-2-3-4-6.aspx) or similar) for door open/closed status detection. Jacks are provided to add external versions of the same sensors if placement is an issue.
 
 #### Images ####
-<img src="docs/images/lab_sensor_board_v2.0/wireless_lab_monitor_front_tq_view.png" width="300" alt="Populated Board Top View"><img src="docs/images/lab_sensor_board_v2.0/wireless_lab_monitor_bottom_tq_view2.png" width="300" alt="Populated Board Bottom View">
+<img src="docs/images/lab_sensor_board_v2.0/wireless_lab_monitor_front_tq_view.png" width="300" alt="Populated Board Top View" /><img src="docs/images/lab_sensor_board_v2.0/wireless_lab_monitor_bottom_tq_view.png" width="300" alt="Populated Board Bottom View" />
 
 #### Layout ####
-
-![Single Sensor Board Front](docs/images/lab_sensor_board_v1.0/as_built_2018-01-31/wireless_lab_sensor_front-2018-01-17.png)
-
-![Single Sensor Board Back](docs/images/lab_sensor_board_v1.0/as_built_2018-01-31/wireless_lab_sensor_back-2018-01-17.png)
+<img src="docs/images/lab_sensor_board_v1.0/as_built_2018-01-31/wireless_lab_sensor_front-2018-01-17.png" alt="Single Sensor Board Front" width="300">   <img src="docs/images/lab_sensor_board_v1.0/as_built_2018-01-31/wireless_lab_sensor_back-2018-01-17.png" alt="Single Sensor Board Back" width="300">

@@ -10,8 +10,8 @@
     "arduino"
   ],
   "fuses": {
-    "efuse": "0xFF",
-    "hfuse": "0xD9",
+    "efuse": "0x05",
+    "hfuse": "0xDA",
     "lfuse": "0xE2",
     "lock": "0x3F"
   },

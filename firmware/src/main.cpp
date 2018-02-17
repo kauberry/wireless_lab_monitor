@@ -17,7 +17,7 @@
 #ifdef MY_GATEWAY_ESP8266
   #include <ESP8266WiFi.h>
 #endif
-// load MySensors library\
+// load MySensors library
 //
 #include <MySensors.h>
 // load NodeManager library
@@ -34,10 +34,10 @@ void before() {
   /*
    * Register below your sensors
    */
-  nodeManager.setBatteryMin(1.9);
-  nodeManager.setBatteryMax(3.3);
+  nodeManager.setBatteryMin(1.8);
+  nodeManager.setBatteryMax(3.0);
   nodeManager.setSleepMinutes(60);
-  nodeManager.setBatteryReportHours(6);
+  nodeManager.setBatteryReportHours(4);
   nodeManager.setBatteryInternalVcc(true);
   nodeManager.setSleepInterruptPin(true);
   nodeManager.setPowerPins(-1, 4, 1000);
@@ -48,21 +48,15 @@ void before() {
   int int_temp = nodeManager.registerSensor(SENSOR_DS18B20, 5, 5);
 
   SensorDoor* door_sensor_int = ((SensorDoor*) nodeManager.getSensor(int_door));
-  char int_door_name [] = "Internal Door Sensor";
-  door_sensor_int->setDescription(int_door_name);
   door_sensor_int->setInterrupt(2, CHANGE, -1);
+  door_sensor_int->setReportIntervalMinutes(60);
 
   SensorDoor* door_sensor_ext = (SensorDoor*) nodeManager.getSensor(ext_door);
-  char ext_door_name [] = "External Door Sensor";
-  door_sensor_ext->setDescription(ext_door_name);
   door_sensor_ext->setInterrupt(3, CHANGE, -1);
 
   wait(1000);
   SensorDs18b20* temp_sensor_int = (SensorDs18b20*) nodeManager.getSensor(int_temp);
-  char int_temp_name [] = "Internal Temperature Sensor";
-  temp_sensor_int->setDescription(int_temp_name);
   temp_sensor_int->setReportIntervalMinutes(60);
-  // temp_sensor_int->setPowerPins(-1, 4, 50);
   /*
    * Register above your sensors
    */

@@ -13,13 +13,15 @@
  */
 
 // General settings
-#define MY_BAUD_RATE 57600
+#define MY_BAUD_RATE 9600
 #define MY_DEBUG
-#define MY_NODE_ID 100
+#define MY_NODE_ID 101
 //#define MY_SMART_SLEEP_WAIT_DURATION_MS 500
 
 // NRF24 radio settings
 #define MY_RADIO_NRF24
+#define MY_RF24_CS_PIN 8
+#define MY_RF24_CE_PIN 7
 //#define MY_RF24_ENABLE_ENCRYPTION
 //#define MY_RF24_CHANNEL 76
 //#define MY_RF24_PA_LEVEL RF24_PA_HIGH
@@ -58,52 +60,6 @@
 //#define OTA_WAIT_PERIOD 300
 //#define FIRMWARE_MAX_REQUESTS 2
 //#define MY_OTA_RETRY 2
-
-/**********************************
- * MySensors gateway configuration
- */
-// Common gateway settings
-//#define MY_REPEATER_FEATURE
-
-// Serial gateway settings
-//#define MY_GATEWAY_SERIAL
-
-// Ethernet gateway settings
-//#define MY_GATEWAY_W5100
-
-// ESP8266 gateway settings
-//#define MY_GATEWAY_ESP8266
-//#define MY_ESP8266_SSID ""
-//#define MY_ESP8266_PASSWORD ""
-
-// Gateway networking settings
-//#define MY_IP_ADDRESS 192,168,178,87
-//#define MY_IP_GATEWAY_ADDRESS 192,168,178,1
-//#define MY_IP_SUBNET_ADDRESS 255,255,255,0
-//#define MY_PORT 5003
-//#define MY_GATEWAY_MAX_CLIENTS 2
-//#define MY_USE_UDP
-
-// Gateway MQTT settings
-//#define MY_GATEWAY_MQTT_CLIENT
-//#define MY_CONTROLLER_IP_ADDRESS 192, 168, 178, 68
-//#define MY_PORT 1883
-//#define MY_MQTT_USER "username"
-//#define MY_MQTT_PASSWORD "password"
-//#define MY_MQTT_CLIENT_ID "mysensors-1"
-//#define MY_MQTT_PUBLISH_TOPIC_PREFIX "mygateway1-out"
-//#define MY_MQTT_SUBSCRIBE_TOPIC_PREFIX "mygateway1-in"
-
-// Gateway inclusion mode
-//#define MY_INCLUSION_MODE_FEATURE
-//#define MY_INCLUSION_BUTTON_FEATURE
-//#define MY_INCLUSION_MODE_DURATION 60
-//#define MY_DEFAULT_LED_BLINK_PERIOD 300
-
-// Gateway Leds settings
-//#define MY_DEFAULT_ERR_LED_PIN 4
-//#define MY_DEFAULT_RX_LED_PIN  5
-//#define MY_DEFAULT_TX_LED_PIN  6
 
 /***********************************
  * NodeManager configuration

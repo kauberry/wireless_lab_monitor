@@ -15,9 +15,10 @@
 // General settings
 #define MY_BAUD_RATE 9600
 #define MY_DEBUG
-#define MY_NODE_ID 101
+// #define MY_NODE_ID 100
 //#define MY_SMART_SLEEP_WAIT_DURATION_MS 500
-
+#define MY_SPLASH_SCREEN_DISABLED
+#define MY_SIGNAL_REPORT_ENABLED
 // NRF24 radio settings
 #define MY_RADIO_NRF24
 #define MY_RF24_CS_PIN 8
@@ -27,27 +28,6 @@
 //#define MY_RF24_PA_LEVEL RF24_PA_HIGH
 // #define MY_DEBUG_VERBOSE_RF24
 //#define MY_RF24_DATARATE RF24_250KBPS
-
-// RFM69 radio settings
-//#define MY_RADIO_RFM69
-//#define MY_RFM69_FREQUENCY RF69_868MHZ
-//#define MY_RFM69_FREQUENCY RFM69_868MHZ
-//#define MY_IS_RFM69HW
-//#define MY_RFM69_NEW_DRIVER
-//#define MY_RFM69_ENABLE_ENCRYPTION
-//#define MY_RFM69_NETWORKID 100
-//#define MY_DEBUG_VERBOSE_RFM69
-//#define MY_RF69_IRQ_PIN D1
-//#define MY_RF69_IRQ_NUM MY_RF69_IRQ_PIN
-//#define MY_RF69_SPI_CS D2
-//#define MY_RFM69_ATC_MODE_DISABLED
-
-// RS485 serial transport settings
-//#define MY_RS485
-//#define MY_RS485_BAUD_RATE 9600
-//#define MY_RS485_DE_PIN 2
-//#define MY_RS485_MAX_MESSAGE_LENGTH 40
-//#define MY_RS485_HWSERIAL Serial1
 
 // Message signing settings
 //#define MY_SIGNING_SOFT
@@ -75,7 +55,7 @@
 // if enabled, allow modifying the configuration remotely by interacting with the configuration child id
 #define REMOTE_CONFIGURATION 0
 // if enabled, persist the remote configuration settings on EEPROM
-#define PERSIST 0
+#define PERSIST 1
 // if enabled, a battery sensor will be created at BATTERY_CHILD_ID (201 by default) and will report vcc voltage together with the battery level percentage
 #define BATTERY_SENSOR 1
 // if enabled, a signal sensor will be created at RSSI_CHILD_ID (202 by default) and will report the signal quality of the transport layer

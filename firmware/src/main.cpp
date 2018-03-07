@@ -34,29 +34,48 @@ void before() {
   /*
    * Register below your sensors
    */
-  nodeManager.setBatteryMin(1.8);
-  nodeManager.setBatteryMax(3.0);
+  nodeManager.setBatteryMin(1.9);
+  nodeManager.setBatteryMax(3.3);
   nodeManager.setSleepMinutes(60);
-  nodeManager.setBatteryReportHours(4);
+  nodeManager.setBatteryReportHours(1);
+  nodeManager.setBatteryReportWithInterrupt(true);
   nodeManager.setBatteryInternalVcc(true);
   nodeManager.setSleepInterruptPin(true);
   nodeManager.setPowerPins(-1, 4, 1000);
   nodeManager.setAutoPowerPins(false);
+  nodeManager.setADCOff();
 
-  int int_door = nodeManager.registerSensor(SENSOR_DOOR, 2, 1);
-  int ext_door = nodeManager.registerSensor(SENSOR_DOOR, 3, 2);
+  int int_door = nodeManager.registerSensor(SENSOR_DOOR, 3, 1);
+  // int ext_door = nodeManager.registerSensor(SENSOR_DOOR, 2, 2);
   int int_temp = nodeManager.registerSensor(SENSOR_DS18B20, 5, 5);
+  // int ext_temp = nodeManager.registerSensor(SENSOR_DS18B20, 5, 6);
+
+  const char* door_sensor_int_name = "Onboard Door Sensor";
+  // const char* door_sensor_ext_name = "External Door Sensor";
+  const char* temp_sensor_int_name = "Onboard Temp Sensor";
+  // const char* temp_sensor_ext_name = "External Temp Sensor";
 
   SensorDoor* door_sensor_int = ((SensorDoor*) nodeManager.getSensor(int_door));
-  door_sensor_int->setInterrupt(2, CHANGE, -1);
+  door_sensor_int->setInterrupt(3, CHANGE, 0);
   door_sensor_int->setReportIntervalMinutes(60);
+  door_sensor_int->setDescription((char*) door_sensor_int_name);
+  door_sensor_int->setPin(0);
 
-  SensorDoor* door_sensor_ext = (SensorDoor*) nodeManager.getSensor(ext_door);
-  door_sensor_ext->setInterrupt(3, CHANGE, -1);
+  // SensorDoor* door_sensor_ext = (SensorDoor*) nodeManager.getSensor(ext_door);
+  // door_sensor_ext->setInterrupt(2, CHANGE, 0);
+  // door_sensor_ext->setReportIntervalMinutes(60);
+  // door_sensor_ext->setDescription((char*) door_sensor_ext_name);
 
   wait(1000);
   SensorDs18b20* temp_sensor_int = (SensorDs18b20*) nodeManager.getSensor(int_temp);
   temp_sensor_int->setReportIntervalMinutes(60);
+  temp_sensor_int->setDescription((char*) temp_sensor_int_name);
+
+  // SensorDs18b20* temp_sensor_ext = (SensorDs18b20*) nodeManager.getSensor(ext_temp);
+  // temp_sensor_ext->setReportIntervalMinutes(60);
+  // temp_sensor_ext->setDescription((char*) temp_sensor_ext_name);
+
+
   /*
    * Register above your sensors
    */
@@ -79,6 +98,7 @@ void setup() {
 void loop() {
   // call NodeManager loop routine
   nodeManager.loop();
+  delay(100);
 }
 
 // receive

@@ -3481,16 +3481,16 @@ void NodeManager::presentation() {
   if (_sleep_between_send > 0) sleep(_sleep_between_send);
   sendSketchInfo(SKETCH_NAME,SKETCH_VERSION);
   // present the service as a custom sensor to the controller
-  _present(CONFIGURATION_CHILD_ID, S_CUSTOM);
+  present(CONFIGURATION_CHILD_ID, S_CUSTOM, "Configuration Node");
   #if BATTERY_MANAGER == 1 && BATTERY_SENSOR == 1
     // present the battery service
-    _present(BATTERY_CHILD_ID, S_MULTIMETER);
+    present(BATTERY_CHILD_ID, S_MULTIMETER, "Battery Level");
     // report battery level
     batteryReport();
   #endif
   #if SIGNAL_SENSOR == 1 && defined(MY_SIGNAL_REPORT_ENABLED)
     // present the signal service
-    _present(SIGNAL_CHILD_ID, S_SOUND);
+    present(SIGNAL_CHILD_ID, S_SOUND, "Signal Level");
     // report battery level
     signalReport();
   #endif

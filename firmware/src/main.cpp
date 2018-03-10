@@ -59,7 +59,7 @@ void before() {
   door_sensor_int->setInterrupt(3, CHANGE, 0);
   door_sensor_int->setReportIntervalMinutes(60);
   door_sensor_int->setDescription((char*) door_sensor_int_name);
-  door_sensor_int->setPin(0);
+  // door_sensor_int->setPin(LOW);
 
   // SensorDoor* door_sensor_ext = (SensorDoor*) nodeManager.getSensor(ext_door);
   // door_sensor_ext->setInterrupt(2, CHANGE, 0);
@@ -92,6 +92,8 @@ void presentation() {
 void setup() {
   // call NodeManager setup routine
   nodeManager.setup();
+  pinMode(3, INPUT);
+  digitalWrite(3, LOW);
 }
 
 // loop

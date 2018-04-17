@@ -21,8 +21,8 @@
 // #define MY_SIGNAL_REPORT_ENABLED
 // NRF24 radio settings
 #define MY_RADIO_NRF24
-#define MY_RF24_CS_PIN 8
-#define MY_RF24_CE_PIN 7
+#define MY_RF24_CS_PIN 10
+#define MY_RF24_CE_PIN 9
 //#define MY_RF24_ENABLE_ENCRYPTION
 //#define MY_RF24_CHANNEL 76
 //#define MY_RF24_PA_LEVEL RF24_PA_HIGH

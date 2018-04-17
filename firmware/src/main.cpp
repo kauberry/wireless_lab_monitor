@@ -35,15 +35,15 @@ void before() {
    * Register below your sensors
    */
   nodeManager.setBatteryMin(1.9);
-  nodeManager.setBatteryMax(3.3);
-  nodeManager.setSleepMinutes(60);
+  nodeManager.setBatteryMax(3.0);
+  nodeManager.setSleepHours(1);
   nodeManager.setBatteryReportHours(1);
   nodeManager.setBatteryReportWithInterrupt(true);
   nodeManager.setBatteryInternalVcc(true);
   nodeManager.setSleepInterruptPin(true);
   nodeManager.setPowerPins(-1, 4, 1000);
   nodeManager.setAutoPowerPins(false);
-  nodeManager.setADCOff();
+  // nodeManager.setADCOff();
 
   int int_door = nodeManager.registerSensor(SENSOR_DOOR, 3, 1);
   // int ext_door = nodeManager.registerSensor(SENSOR_DOOR, 2, 2);

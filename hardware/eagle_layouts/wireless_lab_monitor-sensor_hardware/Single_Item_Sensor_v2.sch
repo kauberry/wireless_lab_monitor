@@ -7812,9 +7812,6 @@ Details see: &lt;a href="http://katalog.we-online.de/en/em/BCPH_BATTERY_HOLDER/7
 <part name="R5" library="adafruit" deviceset="R-US_" device="M0805" value="10k"/>
 <part name="C3" library="GDOv5 Board" deviceset="CAP" device="0805" value="0.1uF"/>
 <part name="ISP1" library="adafruit" deviceset="AVRISP" device="-6"/>
-<part name="R6" library="adafruit" deviceset="R-US_" device="M0805" value="4.7k"/>
-<part name="R7" library="adafruit" deviceset="R-US_" device="M0805" value="4.7k"/>
-<part name="R8" library="adafruit" deviceset="R-US_" device="M0805" value="4.7k"/>
 </parts>
 <sheets>
 <sheet>
@@ -7890,18 +7887,6 @@ Details see: &lt;a href="http://katalog.we-online.de/en/em/BCPH_BATTERY_HOLDER/7
 <attribute name="VALUE" x="147.828" y="25.781" size="1.016" layer="96" rot="R180"/>
 </instance>
 <instance part="ISP1" gate="G$1" x="142.24" y="-10.16"/>
-<instance part="R6" gate="G$1" x="38.1" y="-12.7" smashed="yes">
-<attribute name="NAME" x="33.274" y="-12.4714" size="1.27" layer="95"/>
-<attribute name="VALUE" x="40.64" y="-14.224" size="1.27" layer="96"/>
-</instance>
-<instance part="R7" gate="G$1" x="38.1" y="-15.24" smashed="yes">
-<attribute name="NAME" x="33.274" y="-15.0114" size="1.27" layer="95"/>
-<attribute name="VALUE" x="40.894" y="-16.764" size="1.27" layer="96"/>
-</instance>
-<instance part="R8" gate="G$1" x="38.1" y="-17.78" smashed="yes">
-<attribute name="NAME" x="33.02" y="-17.5514" size="1.27" layer="95"/>
-<attribute name="VALUE" x="40.64" y="-19.304" size="1.27" layer="96"/>
-</instance>
 </instances>
 <busses>
 </busses>
@@ -8135,9 +8120,8 @@ Details see: &lt;a href="http://katalog.we-online.de/en/em/BCPH_BATTERY_HOLDER/7
 <label x="48.26" y="40.64" size="1.27" layer="95" font="vector" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="R6" gate="G$1" pin="1"/>
-<wire x1="33.02" y1="-12.7" x2="30.48" y2="-12.7" width="0.1524" layer="91"/>
-<label x="30.48" y="-12.7" size="1.016" layer="95" rot="R180" xref="yes"/>
+<wire x1="45.72" y1="-12.7" x2="43.18" y2="-12.7" width="0.1524" layer="91"/>
+<label x="43.18" y="-12.7" size="1.016" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <pinref part="ISP1" gate="G$1" pin="SCK"/>
@@ -8152,9 +8136,8 @@ Details see: &lt;a href="http://katalog.we-online.de/en/em/BCPH_BATTERY_HOLDER/7
 <label x="48.26" y="45.72" size="1.27" layer="95" font="vector" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="R7" gate="G$1" pin="1"/>
-<wire x1="33.02" y1="-15.24" x2="30.48" y2="-15.24" width="0.1524" layer="91"/>
-<label x="30.48" y="-15.24" size="1.016" layer="95" rot="R180" xref="yes"/>
+<wire x1="45.72" y1="-15.24" x2="43.18" y2="-15.24" width="0.1524" layer="91"/>
+<label x="43.18" y="-15.24" size="1.016" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <pinref part="ISP1" gate="G$1" pin="MOSI"/>
@@ -8169,9 +8152,8 @@ Details see: &lt;a href="http://katalog.we-online.de/en/em/BCPH_BATTERY_HOLDER/7
 <label x="48.26" y="43.18" size="1.27" layer="95" font="vector" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="R8" gate="G$1" pin="1"/>
-<wire x1="33.02" y1="-17.78" x2="30.48" y2="-17.78" width="0.1524" layer="91"/>
-<label x="30.48" y="-17.78" size="1.016" layer="95" rot="R180" xref="yes"/>
+<wire x1="45.72" y1="-17.78" x2="43.18" y2="-17.78" width="0.1524" layer="91"/>
+<label x="43.18" y="-17.78" size="1.016" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <pinref part="ISP1" gate="G$1" pin="MISO"/>
@@ -8318,27 +8300,6 @@ Details see: &lt;a href="http://katalog.we-online.de/en/em/BCPH_BATTERY_HOLDER/7
 <pinref part="R5" gate="G$1" pin="1"/>
 <wire x1="119.38" y1="22.86" x2="116.84" y2="22.86" width="0.1524" layer="91"/>
 <label x="116.84" y="22.86" size="1.27" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="N$1" class="0">
-<segment>
-<pinref part="M1" gate="G$1" pin="SCK"/>
-<wire x1="45.72" y1="-12.7" x2="43.18" y2="-12.7" width="0.1524" layer="91"/>
-<pinref part="R6" gate="G$1" pin="2"/>
-</segment>
-</net>
-<net name="N$2" class="0">
-<segment>
-<pinref part="M1" gate="G$1" pin="MOSI"/>
-<wire x1="45.72" y1="-15.24" x2="43.18" y2="-15.24" width="0.1524" layer="91"/>
-<pinref part="R7" gate="G$1" pin="2"/>
-</segment>
-</net>
-<net name="N$3" class="0">
-<segment>
-<pinref part="M1" gate="G$1" pin="MISO"/>
-<wire x1="45.72" y1="-17.78" x2="43.18" y2="-17.78" width="0.1524" layer="91"/>
-<pinref part="R8" gate="G$1" pin="2"/>
 </segment>
 </net>
 </nets>

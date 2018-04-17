@@ -3813,6 +3813,7 @@ void NodeManager::saveToMemory(int index, int value) {
 
 // return vcc in V
 float NodeManager::getVcc() {
+  long result;
   #ifndef MY_GATEWAY_ESP8266
     // Measure Vcc against 1.1V Vref
     #if defined(__AVR_ATmega32U4__) || defined(__AVR_ATmega1280__) || defined(__AVR_ATmega2560__)
@@ -3825,12 +3826,16 @@ float NodeManager::getVcc() {
       ADMUX = (_BV(REFS0) | _BV(MUX3) | _BV(MUX2) | _BV(MUX1));
     #endif
     // Vref settle
-    wait(70);
+    delay(2);
     // Do conversion
     ADCSRA |= _BV(ADSC);
     while (bit_is_set(ADCSRA, ADSC)) {};
     // return Vcc in mV
-    return (float)((1125300UL) / ADC) / 1000;
+    result = ADCL;
+    result |= ADCH<<8;
+    result = 1126400L / result;
+
+    return (float)result / 1000;
   #else
     return (float)0;
   #endif
